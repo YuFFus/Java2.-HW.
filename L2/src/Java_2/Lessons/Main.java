@@ -2,7 +2,7 @@
  * Java 2. Lesson 2. Homework;
  * @author Fedak Yuriy;
  * @version 28/09/2018;
- * @link
+ * @link https://github.com/YuFFus/Java2.-HW..git ;
  */
 
 package Java_2.Lessons;
@@ -47,30 +47,32 @@ public class Main {
         return mySymbolInt;
     }
 
-    public static void main(String[] args) {
-	    new Main();
-        try {
-            Main.myArraySum(myOkArray);
-            System.out.println(Main.myArraySum(myOkArray));
+    public static void main(String[] args){
+            new Main();
+            try {
+                Main.myArraySum(myOkArray);
+                System.out.println(Main.myArraySum(myOkArray));
+            }
+            catch (MyArrayDataException exc) {
+            }
+            catch (MySizeArrayException exc) {
+            }
+
+            try {
+                Main.myArraySum(myNg1Array);
+            }
+            catch (MyArrayDataException exc) {
+            }
+            catch (MySizeArrayException exc) {
+            }
+
+            try {
+                Main.myArraySum(myNg2Array);
+            }
+            catch (MyArrayDataException exc) {
+            }
+            catch (MySizeArrayException exc) {
+            }
         }
-        catch (MyArrayDataException exc) {
-        }
-        catch (MySizeArrayException exc) {
-        }
-        try {
-            Main.myArraySum(myNg1Array);
-        }
-        catch (MyArrayDataException exc) {
-        }
-        catch (MySizeArrayException exc) {
-        }
-        try {
-            Main.myArraySum(myNg2Array);
-        }
-        catch (MyArrayDataException exc) {
-        }
-        catch (MySizeArrayException exc) {
-        }
-    }
 }
 
