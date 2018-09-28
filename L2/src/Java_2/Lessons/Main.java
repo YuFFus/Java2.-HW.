@@ -9,10 +9,8 @@ package Java_2.Lessons;
 
 import org.apache.commons.lang3.math.NumberUtils;
 
-
-
 public class Main {
-    static String[][] myOkArray, myNg1Array, myNg2Array;
+    private String[][] myOkArray, myNg1Array, myNg2Array;
 
     public Main(){
         myOkArray = new String [4][];
@@ -34,7 +32,7 @@ public class Main {
         myNg2Array[3] = new String[]{"17", "8", "7", "21"};
     }
 
-    public static int myArraySum(String[][] myArray) throws MySizeArrayException, MyArrayDataException {
+    public int myArraySum(String[][] myArray) throws MySizeArrayException, MyArrayDataException {
         int mySymbolInt = 0;
         for (int i = 0; i < myArray.length; i++){
             if (myArray.length != 4) throw new MySizeArrayException();
@@ -47,32 +45,35 @@ public class Main {
         return mySymbolInt;
     }
 
-    public static void main(String[] args){
-            new Main();
-            try {
-                Main.myArraySum(myOkArray);
-                System.out.println(Main.myArraySum(myOkArray));
-            }
-            catch (MyArrayDataException exc) {
-            }
-            catch (MySizeArrayException exc) {
-            }
-
-            try {
-                Main.myArraySum(myNg1Array);
-            }
-            catch (MyArrayDataException exc) {
-            }
-            catch (MySizeArrayException exc) {
-            }
-
-            try {
-                Main.myArraySum(myNg2Array);
-            }
-            catch (MyArrayDataException exc) {
-            }
-            catch (MySizeArrayException exc) {
-            }
+    private void go(){
+        try {
+            myArraySum(myOkArray);
+            System.out.println(myArraySum(myOkArray));
         }
+        catch (MyArrayDataException exc) {
+        }
+        catch (MySizeArrayException exc) {
+        }
+
+        try {
+            myArraySum(myNg1Array);
+        }
+        catch (MyArrayDataException exc) {
+        }
+        catch (MySizeArrayException exc) {
+        }
+
+        try {
+            myArraySum(myNg2Array);
+        }
+        catch (MyArrayDataException exc) {
+        }
+        catch (MySizeArrayException exc) {
+        }
+    }
+    
+    public static void main(String[] args){
+        new Main().go();
+    }
 }
 
