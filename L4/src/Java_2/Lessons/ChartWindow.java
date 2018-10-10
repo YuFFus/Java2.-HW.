@@ -36,9 +36,11 @@ public class ChartWindow extends JFrame {
         }
         bg = new ButtonGroup();
         jrbtn1 = new JRadioButton("Remote guest");
-        jrbtn2 = new JRadioButton("You");
+        jrbtn2 = new JRadioButton("You", true);
         bg.add(jrbtn1);
         bg.add(jrbtn2);
+        remoteGuestMsg = false;
+        activeTalkerName = "You: ";
 
         jpnl1 = new JPanel();
         jpnl2 = new JPanel();
