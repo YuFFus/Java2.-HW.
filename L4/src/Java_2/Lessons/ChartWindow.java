@@ -82,6 +82,17 @@ public class ChartWindow extends JFrame {
             }
         });
 
+        jtf.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                moveUp(chartMsgs);
+                chartMsgs[0].str = jtf.getText();
+                chartMsgs[0].chartSideActive = remoteGuestMsg;
+                chartMsgs[0].talkerName = activeTalkerName;
+                jtf.setText("");
+                msgShow(chartMsgs);
+            }
+        });
+
         jrbtn1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
                 remoteGuestMsg = true;
